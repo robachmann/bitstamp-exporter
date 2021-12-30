@@ -17,7 +17,7 @@ spec:
         app: bitstamp-exporter
     spec:
       containers:
-        - image: robachmann/bitstamp-exporter:1.0.0-arm64
+        - image: robachmann/bitstamp-exporter:1.0.1-arm64
           name: bitstamp-exporter
           resources:
             requests:
