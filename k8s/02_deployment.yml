@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bitstamp-exporter
+  namespace: bitstamp-exporter
+  name: bitstamp-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bitstamp-exporter
+  strategy: { }
+  template:
+    metadata:
+      labels:
+        app: bitstamp-exporter
+    spec:
+      containers:
+        - image: robachmann/bitstamp-exporter:1.0.0-arm64
+          name: bitstamp-exporter
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              memory: 64Mi
+          imagePullPolicy: Always
+          env:
+            - name: CURRENCY_PAIRS
+              value: "btceur,btcusd,etheur,ethusd,ltceur,ltcusd"
