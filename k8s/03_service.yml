@@ -5,7 +5,7 @@ metadata:
   namespace: bitstamp-exporter
   labels:
     app: bitstamp-exporter
-    exporter: mystrom
+    exporter: bitstamp
   annotations:
     alpha.monitoring.coreos.com/non-namespaced: "true"
 spec:
